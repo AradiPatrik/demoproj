@@ -1,0 +1,32 @@
+buildscript {
+    dependencies {
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+
+    }
+}
+apply plugin: 'java'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+apply plugin: 'javafx-gradle-plugin'
+
+
+jfx {
+    mainClass = 'Main'
+    vendor = 'TEAM NAME'
+    jfxMainAppJarName = 'App.jar'
+    appName = 'APP NAME'
+}
+
+dependencies {
+    compile 'com.jfoenix:jfoenix:8.0.7'
+    compile 'de.jensd:fontawesomefx:8.9'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
