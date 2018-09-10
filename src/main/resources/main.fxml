@@ -3,6 +3,9 @@
 <?import com.jfoenix.controls.JFXListView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Label?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Separator?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="Controller"
@@ -22,6 +25,30 @@
                 AnchorPane.leftAnchor="0.0"
                 AnchorPane.bottomAnchor="0.0"
                 prefWidth="200">
+            <HBox
+                style="-fx-padding: 10; -fx-border-color: #fff">
+                <FontAwesomeIconView glyphName="BOOK" size="20"/>
+                <Separator opacity="0.0" prefWidth="10" />
+                <Label style="-fx-font-size: 15;">
+                    My Orders
+                </Label>
+            </HBox>
+            <HBox
+                style="-fx-padding: 10; -fx-background-color: #aaf; -fx-border-color: #fff">
+                <FontAwesomeIconView glyphName="SEARCH" size="20"/>
+                <Separator opacity="0.0" prefWidth="10" />
+                <Label style="-fx-font-size: 15;">
+                    Search
+                </Label>
+            </HBox>
+            <HBox
+                style="-fx-padding: 10; -fx-border-color: #fff">
+                <FontAwesomeIconView glyphName="CLOUD" size="20"/>
+                <Separator opacity="0.0" prefWidth="10" />
+                <Label style="-fx-font-size: 15;">
+                    Browse
+                </Label>
+            </HBox>
         </VBox>
     </children>
 

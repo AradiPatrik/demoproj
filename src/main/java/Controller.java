@@ -14,14 +14,14 @@ public class Controller implements Initializable {
     @FXML
     private JFXListView<Student> studentListView;
 
-    @FXML
-    private JFXListView<NavigationItem> navigationListView;
-
-    @FXML
-    private ImageView imageView;
-
     private ObservableList<Student> students;
-    private ObservableList<NavigationItem> navigationItems;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        provideData();
+        studentListView.setItems(students);
+        studentListView.setCellFactory(e -> new StudentListCell());
+    }
 
     private void provideData() {
         students = FXCollections.observableArrayList();
@@ -34,29 +34,5 @@ public class Controller implements Initializable {
                 new Student(6, "Pura Petty", Gender.MALE),
                 new Student(7, "Herma Hines", Gender.FEMALE)
         );
-
-        navigationItems = FXCollections.observableArrayList();
-        navigationItems.addAll(
-                new NavigationItem("Dashboard", "FILE")
-        );
-    }
-
-    private void loadNavigationDrawerImage() {
-        try {
-            Image image = new Image(getClass().getResource("books.jpeg").toExternalForm());
-            imageView.setImage(image);
-        } catch (Exception e) {
-            new RuntimeException(e.getMessage());
-        }
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        provideData();
-      //  loadNavigationDrawerImage();
-        studentListView.setItems(students);
-        studentListView.setCellFactory(e -> new StudentListCell());
-//        navigationListView.setItems(navigationItems);
-  //      navigationListView.setCellFactory(e -> new NavigationListCell());
     }
 }
