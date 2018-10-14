@@ -1,12 +1,11 @@
+import controllers.MainController;
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import services.navigation.NavigatorImpl;
 
 public class Main extends Application {
 
@@ -16,9 +15,15 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
-        primaryStage.setTitle("DEMO");
-        primaryStage.setScene(new Scene(root, 640, 400));
+        FXMLLoader loader = new FXMLLoader();
+        Parent root = loader.load(getClass().getResource("main.fxml").openStream());
+        Pane navHost = (Pane)root.lookup("#navHost");
+        primaryStage.setTitle("IMCSB");
+        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setResizable(true);
         primaryStage.show();
+
+        MainController controller = loader.getController();
+        controller.setNavigator(new NavigatorImpl(navHost));
     }
 }

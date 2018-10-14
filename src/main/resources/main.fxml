@@ -1,56 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Label?>
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.scene.control.Separator?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Controller"
-            prefHeight="400.0" prefWidth="600.0"
-            stylesheets="main.css">
 
-    <children>
-        <JFXListView
-                fx:id="studentListView"
-                AnchorPane.topAnchor="0.0"
-                AnchorPane.leftAnchor="200.0"
-                AnchorPane.bottomAnchor="0.0"
-                AnchorPane.rightAnchor="0.0"/>
-
-        <VBox
-                AnchorPane.topAnchor="0.0"
-                AnchorPane.leftAnchor="0.0"
-                AnchorPane.bottomAnchor="0.0"
-                prefWidth="200">
-            <HBox
-                style="-fx-padding: 10; -fx-border-color: #fff">
-                <FontAwesomeIconView glyphName="BOOK" size="20"/>
-                <Separator opacity="0.0" prefWidth="10" />
-                <Label style="-fx-font-size: 15;">
-                    My Orders
-                </Label>
-            </HBox>
-            <HBox
-                style="-fx-padding: 10; -fx-background-color: #aaf; -fx-border-color: #fff">
-                <FontAwesomeIconView glyphName="SEARCH" size="20"/>
-                <Separator opacity="0.0" prefWidth="10" />
-                <Label style="-fx-font-size: 15;">
-                    Search
-                </Label>
-            </HBox>
-            <HBox
-                style="-fx-padding: 10; -fx-border-color: #fff">
-                <FontAwesomeIconView glyphName="CLOUD" size="20"/>
-                <Separator opacity="0.0" prefWidth="10" />
-                <Label style="-fx-font-size: 15;">
-                    Browse
-                </Label>
-            </HBox>
-        </VBox>
-    </children>
-
-
-</AnchorPane>
+<HBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+   <children>
+      <VBox alignment="TOP_CENTER" maxWidth="250.0" minHeight="400.0" minWidth="150.0" prefHeight="400.0" prefWidth="200.0" style="-fx-background-color: #fff;" HBox.hgrow="ALWAYS">
+         <children>
+            <AnchorPane minHeight="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #039be5;" VBox.vgrow="NEVER">
+               <children>
+                  <Label alignment="CENTER" text="IMCSB" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Roboto" size="25.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+            <VBox alignment="TOP_CENTER" minHeight="250.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button fx:id="buttonNavDashboard" mnemonicParsing="false" prefHeight="46.0" prefWidth="150.0" style="-fx-background-insets: 0; -fx-background-radius: 0; -fx-border-width: 0; -fx-background-color: #fff;" text="Dashboard">
+                     <font>
+                        <Font name="Roboto" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonNavSearch" mnemonicParsing="false" prefHeight="46.0" prefWidth="150.0" style="-fx-background-insets: 0; -fx-background-radius: 0; -fx-border-width: 0; -fx-background-color: #fff;" text="Search">
+                     <font>
+                        <Font name="Roboto" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="0.0" radius="3.2075" width="14.83" />
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <Pane fx:id="navHost" blendMode="MULTIPLY" depthTest="ENABLE" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="450.0" style="-fx-background-color: #be2;" HBox.hgrow="ALWAYS" />
+   </children>
+</HBox>
