@@ -1,4 +1,4 @@
-package view;
+package hu.csakegysor.imcsb.view;
 
 import com.google.inject.Inject;
 import com.google.inject.Injector;

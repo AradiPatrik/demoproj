@@ -1,17 +1,17 @@
-package di;
+package hu.csakegysor.imcsb.di;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
-import controller.DashboardController;
-import controller.MainController;
-import controller.SearchController;
-import service.navigation.Navigator;
-import service.navigation.NavigatorImpl;
-import view.FXMLLoaderProvider;
-import view.viewfactory.ViewCache;
-import view.viewfactory.ViewCacheImpl;
-import view.viewfactory.ViewFactory;
-import view.viewfactory.ViewFactoryImpl;
+import hu.csakegysor.imcsb.controller.DashboardController;
+import hu.csakegysor.imcsb.controller.MainController;
+import hu.csakegysor.imcsb.controller.SearchController;
+import hu.csakegysor.imcsb.service.navigation.Navigator;
+import hu.csakegysor.imcsb.service.navigation.NavigatorImpl;
+import hu.csakegysor.imcsb.view.FXMLLoaderProvider;
+import hu.csakegysor.imcsb.view.viewfactory.ViewCache;
+import hu.csakegysor.imcsb.view.viewfactory.ViewCacheImpl;
+import hu.csakegysor.imcsb.view.viewfactory.ViewFactory;
+import hu.csakegysor.imcsb.view.viewfactory.ViewFactoryImpl;
 
 public class MainModule extends AbstractModule {
     @Override

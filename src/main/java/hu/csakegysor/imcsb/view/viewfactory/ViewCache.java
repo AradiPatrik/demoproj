@@ -1,4 +1,4 @@
-package view.viewfactory;
+package hu.csakegysor.imcsb.view.viewfactory;
 import javafx.scene.Node;
 import java.util.Optional;
 

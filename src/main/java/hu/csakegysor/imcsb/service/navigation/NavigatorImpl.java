@@ -1,8 +1,9 @@
-package service.navigation;
+package hu.csakegysor.imcsb.service.navigation;
 
+import hu.csakegysor.imcsb.utils.L;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
-import view.viewfactory.ViewFactory;
+import hu.csakegysor.imcsb.view.viewfactory.ViewFactory;
 
 import javax.inject.Inject;
 
@@ -24,14 +25,16 @@ public class NavigatorImpl implements Navigator {
     }
 
     @Override
+    public Pane getNavHost() {
+        return this.navHost;
+    }
+
+    @Override
     public void navigateTo(final Destination destination) {
         switchDestination(viewFactory.get(destination.getPath()));
     }
 
     private void switchDestination(final Node n) {
-        if (navHost == null) {
-            throw new RuntimeException(NAV_HOST_IS_NULL);
-        }
         if (!navHost.getChildren().isEmpty()) {
             navHost.getChildren().remove(ROOT_INDEX);
         }

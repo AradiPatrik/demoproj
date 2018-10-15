@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<Pane prefHeight="400.0" prefWidth="350.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.csakegysor.imcsb.controller.SearchController">
+    <children>
+        <Label text="Search">
+            <font>
+                <Font name="Roboto" size="30.0" />
+            </font>
+        </Label>
+    </children>
+</Pane>

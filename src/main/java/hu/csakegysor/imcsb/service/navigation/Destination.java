@@ -1,4 +1,4 @@
-package service.navigation;
+package hu.csakegysor.imcsb.service.navigation;
 
 public enum Destination {
     DASHBOARD("dashboard.fxml"),
