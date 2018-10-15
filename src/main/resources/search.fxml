@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<Pane prefHeight="400.0" prefWidth="350.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SearchController">
+<Pane prefHeight="400.0" prefWidth="350.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SearchController">
    <children>
       <Label text="Search">
          <font>
