@@ -21,11 +21,11 @@ public class MainController implements Initializable {
     private static final int ROOT_INDEX = 0;
 
     @FXML
-    private Button buttonNavDashboard;
+    public Button buttonNavDashboard;
     @FXML
-    private Button buttonNavSearch;
+    public Button buttonNavSearch;
     @FXML
-    private Pane navHost;
+    public Pane navHost;
     private Navigator navigator;
 
     @Inject
