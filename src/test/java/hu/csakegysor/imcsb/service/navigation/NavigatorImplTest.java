@@ -17,6 +17,7 @@ public class NavigatorImplTest {
     private Pane mockPane;
     private ObservableList<Node> mockChildren;
     private Node mockNode;
+    private Navigator.OnNavigationListener mockNavigationListener;
 
     @Before
     public void setup() {
@@ -24,6 +25,7 @@ public class NavigatorImplTest {
         mockPane = mock(Pane.class);
         mockChildren = (ObservableList<Node>)mock(ObservableList.class);
         mockNode = mock(Node.class);
+        mockNavigationListener = mock(Navigator.OnNavigationListener.class);
         navigator = new NavigatorImpl(mockViewFactory);
     }
 
@@ -39,13 +41,18 @@ public class NavigatorImplTest {
         when(mockViewFactory.get(any(String.class))).thenReturn(mockNode);
         when(mockChildren.isEmpty()).thenReturn(true).thenReturn(false);
 
+        navigator.setOnNavigationListener(mockNavigationListener);
         navigator.setNavHost(mockPane);
         navigator.navigateTo(Destination.DASHBOARD);
+        assertEquals(Destination.DASHBOARD, navigator.getCurrentDestination());
         navigator.navigateTo(Destination.SEARCH);
+        assertEquals(Destination.SEARCH, navigator.getCurrentDestination());
 
         verify(mockChildren, times(1)).remove(0);
         verify(mockViewFactory, times(1)).get(Destination.DASHBOARD.getPath());
         verify(mockViewFactory, times(1)).get(Destination.SEARCH.getPath());
         verify(mockChildren, times(2)).add(any(Node.class));
+        verify(mockNavigationListener, times(1)).onNavigation(Destination.DASHBOARD);
+        verify(mockNavigationListener, times(1)).onNavigation(Destination.SEARCH);
     }
 }

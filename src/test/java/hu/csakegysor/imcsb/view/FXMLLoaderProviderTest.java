@@ -1,13 +1,11 @@
 package hu.csakegysor.imcsb.view;
 
 import com.google.inject.Injector;
-
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 
 public class FXMLLoaderProviderTest {
     private FXMLLoaderProvider provider;

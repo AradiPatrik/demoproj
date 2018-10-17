@@ -29,8 +29,12 @@ jfx {
 dependencies {
     compile 'commons-logging:commons-logging:1.1.1'
     compile 'com.google.inject:guice:4.0'
-    compile 'com.jfoenix:jfoenix:8.0.7'
     compile 'de.jensd:fontawesomefx:8.9'
+    compile 'com.mashape.unirest:unirest-java:1.4.9'
+    compile 'com.google.code.gson:gson:2.8.5'
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile "org.mockito:mockito-core:2.+"
+    testCompile "org.mockito:mockito-core:2.1.0"
+    testCompile 'de.saxsys:jfx-testrunner:1.2'
+    testCompile "org.testfx:testfx-core:4.0.15-alpha"
+    testCompile "org.testfx:testfx-junit:4.0.15-alpha"
 }

@@ -43,6 +43,6 @@
             <Insets />
          </opaqueInsets>
       </VBox>
-      <Pane fx:id="navHost" blendMode="MULTIPLY" depthTest="ENABLE" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="450.0" style="-fx-background-color: #be2;" HBox.hgrow="ALWAYS" />
+      <AnchorPane fx:id="navHost" blendMode="MULTIPLY" depthTest="ENABLE" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="450.0" style="-fx-background-color: #be2;" HBox.hgrow="ALWAYS" />
    </children>
 </HBox>

@@ -11,7 +11,7 @@ import static org.mockito.Mockito.*;
 import static org.junit.Assert.*;
 
 public class ViewCacheImplTest {
-    public static final String UNIQUE_KEY = "UNIQUE_KEY";
+    private static final String UNIQUE_KEY = "UNIQUE_KEY";
     private ViewCache viewCache;
 
     @Before

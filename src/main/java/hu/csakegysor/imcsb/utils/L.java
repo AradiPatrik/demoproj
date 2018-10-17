@@ -1,7 +1,14 @@
 package hu.csakegysor.imcsb.utils;
 
+import hu.csakegysor.imcsb.app.App;
+import hu.csakegysor.imcsb.controller.MainController;
+import hu.csakegysor.imcsb.view.viewfactory.ViewCacheImpl;
+import hu.csakegysor.imcsb.view.viewfactory.ViewFactoryImpl;
+
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
@@ -63,7 +70,8 @@ public class L {
     }
 
     public static void setup() {
-        try(FileInputStream stream = new FileInputStream(L.class.getClassLoader().getResource("logging.properties").getFile())) {
+        URL resource = L.class.getClassLoader().getResource("logging.properties");
+        try(InputStream stream = resource.openStream()) {
             LogManager.getLogManager().readConfiguration(stream);
         } catch (IOException e) {
             throw new RuntimeException(String.format(COULD_NOT_CONFIGURE_LOGGER_FORMAT, e.getMessage()));

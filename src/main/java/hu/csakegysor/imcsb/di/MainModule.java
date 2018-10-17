@@ -1,5 +1,6 @@
 package hu.csakegysor.imcsb.di;
 
+import com.google.gson.Gson;
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
 import hu.csakegysor.imcsb.controller.DashboardController;
@@ -21,6 +22,7 @@ public class MainModule extends AbstractModule {
         bind(SearchController.class).in(Singleton.class);
         bind(FXMLLoaderProvider.class);
         bind(ViewCache.class).to(ViewCacheImpl.class);
+        bind(Gson.class);
 
         bind(Navigator.class).to(NavigatorImpl.class).in(Singleton.class);
         bind(ViewFactory.class).to(ViewFactoryImpl.class).in(Singleton.class);
